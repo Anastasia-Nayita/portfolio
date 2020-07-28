@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: burlywood;
+    color: brown;
+}
+header {
+    padding: 15px;
+    margin: 20px;
+    background: beige;
+    border: 1px dashed crimson;
+    height: 70px;
+}
+
+#logo {
+    height: 45px;
+    width: 45px;
+    background-color: lightgrey;
+    float: left;
+    position: relative;
+    left: 33px;
+}
+#menu {
+    height: 45px;
+    width: 45px;
+    background-color: coral;
+    float: right;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.container {
+    width: 50vw;
+    height: 300vh;
+    background-color: darkolivegreen;
+    border: 3px solid darkseagreen;
+    margin: 0 auto;
+    position: relative;
+}
+
+h3:nth-child(3) {
+    color: tomato;
+    position: absolute;
+    bottom: 20px;
+}
+img {
+    width: auto;
+    position: relative;
+    display: none;
+    z-index: 1;
+    visibility: hidden; */hide smth alternative to display:non/**
+}
