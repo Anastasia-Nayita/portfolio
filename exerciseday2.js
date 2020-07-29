@@ -1,6 +1,6 @@
 //1
 
-function LogType(r) {
+function logType(r) {
     if (Number.isNaN(r)) {
         console.log("not a number!");
     } else if (typeof r == "number") {
@@ -19,21 +19,22 @@ function LogType(r) {
         console.log("array!");
     } else if (typeof r == "object") {
         console.log("oblect!");
-    } else if (Boolean(r)) {
+    } else if (typeof r == "boolean") {
         console.log("boolean!");
+    } else {
+        console.log("I have no idea!");
     }
 }
-LogType(NaN);
-LogType(3);
-LogType();
-LogType("chikipiki");
-LogType(9007199777777254740991n);
-LogType(null);
-LogType(5);
-LogType([1, 2, 3]);
-LogType(true);
-LogType(function () {});
-LogType({});
+logType(NaN);
+logType(3);
+logType("chikipiki");
+logType(9007199777777254740991n);
+logType(null);
+logType(5);
+logType([1, 2, 3]);
+logType(true);
+logType(function () {});
+logType({});
 
 //2
 
