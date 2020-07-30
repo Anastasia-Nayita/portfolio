@@ -2,13 +2,14 @@
     box-sizing: border-box;
 }
 header {
-    padding: 10px;
     height: 80px;
+    background: white;
 }
 
 body {
-    background-color: white;
+    background-color: lightgray;
 }
+
 #logo {
     width: 201px;
     float: left;
@@ -38,5 +39,6 @@ h1 {
     color: white;
     position: fixed;
     font-style: italic;
+    top: 50%;
     left: 35%;
 }
