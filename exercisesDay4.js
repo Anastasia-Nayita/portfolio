@@ -1,6 +1,6 @@
 //1
 function each(objOrArr, callback) {
-    if (objOrArr.isArray) {
+    if (Array.isArray(objOrArr)) {
         //array
         for (var i = 0; i <= objOrArr.length - 1; i++) {
             callback(objOrArr[i], i);
