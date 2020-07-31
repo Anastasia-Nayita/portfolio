@@ -14,7 +14,8 @@ return (doubleX);
 
 var numbers;
 
-numbers [x, doubleX] {
+numbers [x, doubleX] 
+function looping(numbers){
    // loop over
    (var i = 0; i <= numbers.length; i++);
    console.log(numbers[i]);
