@@ -2,9 +2,6 @@
     box-sizing: border-box;
     margin: 0;
 }
-header {
-    /* height: 80px; */
-}
 
 #logo {
     width: 201px;
@@ -90,18 +87,11 @@ footer img {
 .blocktext {
     margin-bottom: 7%;
 }
+
 h2,
 p {
     margin-left: 20%;
 }
-
-/* @media screen and (max-width: 962px) {
-    .banner h1 {
-        font-size: 2rem;
-        left: 20%;
-        right: 20%;
-    }
-} */
 
 @media screen and (max-width: 962px) {
     #logo {
@@ -113,8 +103,6 @@ p {
     .banner h1 {
         font-size: 2rem;
         top: 30%;
-        left: 20%;
-        right: 20%;
     }
     .banner button {
         left: 35%;
@@ -144,12 +132,6 @@ p {
 }
 
 @media screen and (max-width: 775px) {
-    #logo {
-        width: 20%;
-    }
-    #menu img {
-        width: 5%;
-    }
     .banner h1 {
         font-size: 1.8rem;
         left: 15%;
@@ -159,24 +141,14 @@ p {
     .banner button {
         left: 32%;
         right: 30%;
+        top: 32%;
         width: 13rem;
         height: 3rem;
         font-size: 1.1rem;
-        top: 32%;
     }
-    .leftColumn,
-    .rightColumn {
-        margin-left: 5%;
-    }
-    h2 {
-        font-size: 1.4em;
-    }
+
     p {
         margin-top: 8%;
-        font-size: 1em;
-    }
-    .blocktext {
-        margin: 10% 0;
     }
     footer {
         top: 55%;
@@ -193,17 +165,18 @@ p {
     .banner h1 {
         font-size: 1.5rem;
         left: 12%;
-        top: 20%;
+        top: 17%;
         right: 9%;
     }
     .banner button {
         left: 30%;
         right: 2%;
+        top: 22%;
         width: 10rem;
         height: 3rem;
         font-size: 1rem;
-        top: 27%;
     }
+
     p,
     h2 {
         margin-left: 25%;
@@ -230,6 +203,78 @@ p {
     }
 }
 
+@media screen and (max-width: 450px) {
+    .banner h1 {
+        font-size: 1.3rem;
+        /* left: 12%; */
+        top: 14%;
+        /* right: 9%; */
+    }
+    .banner button {
+        top: 18%;
+        width: 9rem;
+        height: 2.5rem;
+        font-size: 0.9rem;
+    }
+
+    p,
+    h2 {
+        margin-left: 25%;
+    }
+    .leftColumn {
+        width: auto;
+        position: relative;
+        margin: 2% 6%;
+        margin: 0 3%;
+    }
+    .rightColumn {
+        position: relative;
+        margin: 2%;
+        width: auto;
+        margin-right: 0;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+    p {
+        margin-top: 10%;
+        font-size: 1em;
+    }
+    .blocktext {
+        margin: 10% 0;
+    }
+    footer {
+        position: relative;
+    }
+    footer img {
+        width: 55px;
+        margin: 5%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .banner h1 {
+        font-size: 1.2rem;
+        top: 12%;
+    }
+    .banner button {
+        font-size: 0.9rem;
+        width: auto;
+        height: auto;
+    }
+    p {
+        margin-top: 5%;
+    }
+    h2 {
+        margin-top: 10%;
+        font-size: 1.3rem;
+    }
+    .blocktext {
+        margin: 5% 0;
+        margin-right: 5%;
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     .banner button,
     body,
@@ -243,23 +288,3 @@ p {
         transition: filter 3s;
     }
 }
-/* background: darkslategray;
-        color: #ddd; */
-
-/* .banner img {
-        opacity: 0.75;
-        transition: opacity 0.5s ease-in-out;
-    }
-    .banner img:hover {
-        opacity: 1;
-    } */
-
-/* h3 {
-    font-weight: ;
-} */
-/* @media (prefers-color-scheme: dark) {
-    .night.dark-scheme {
-        background: darkslategray;
-        color: #ddd;
-    }
-} */
