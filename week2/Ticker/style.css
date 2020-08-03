@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    background-color: #facd33;
+}
+
+.picture {
+    margin: 20% 20%;
+}
+
+#ticker {
+    border: 2px coral dotted;
+    height: 3em;
+    position: relative;
+    overflow: hidden;
+}
+#headlines {
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+}
+
+#headlines a {
+    font-size: 2rem;
+    padding: 0 15px;
+}
