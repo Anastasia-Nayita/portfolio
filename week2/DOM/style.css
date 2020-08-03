@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #465d90;
+    color: white;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    margin: 10px;
+    color: darkorange;
+    text-align: center;
+    display: inline-block;
+}
+img {
+    display: block;
+    margin: 0 auto;
+    height: 40vw;
+}
+
+div {
+    margin: 10px;
+    padding: 20px;
+    border: 4px dotted tomato;
+}
+
+section {
+    width: 48%;
+    display: inline-block;
+}
