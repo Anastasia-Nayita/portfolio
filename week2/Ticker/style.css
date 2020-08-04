@@ -4,7 +4,7 @@ body {
 }
 
 .picture {
-    margin: 20% 20%;
+    margin: 10% 10%;
 }
 
 #ticker {
@@ -18,7 +18,13 @@ body {
     position: absolute;
     left: 50%;
 }
+#headlines-bottom {
+    white-space: nowrap;
+    position: absolute;
+    right: 50%;
+}
 
+#headlines-bottom a,
 #headlines a {
     font-size: 2rem;
     padding: 0 15px;
