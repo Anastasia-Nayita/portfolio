@@ -20,6 +20,10 @@
     right: 5px;
 }
 
+.disappear {
+    visibility: hidden;
+}
+
 .overlay {
     position: fixed;
     width: 70%;
@@ -30,6 +34,10 @@
     opacity: 0.5;
     z-index: 1;
     /* filter: brightness(50%); */
+    visibility: hidden;
+}
+.appear {
+    visibility: visible;
 }
 
 .side-nav {
@@ -38,12 +46,19 @@
     width: 30%;
     height: 100%;
     z-index: 2;
-    background-color: hotpink;
+    background-color: whitesmoke;
+    visibility: hidden;
 }
 
-a {
-    margin: 10%;
-    /* position: fixed; */
+#x {
+    position: fixed;
+    top: 2%;
+    right: 2%;
+    font-size: 1.2rem;
+}
+#side-nav-link {
+    margin: 15% 20%;
+    color: dodgerblue;
 }
 
 .banner {
