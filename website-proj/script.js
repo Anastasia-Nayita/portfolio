@@ -2,14 +2,13 @@ var burger = document.getElementById("menu");
 var overlay = document.getElementsByClassName("overlay");
 var nav = document.getElementsByClassName("side-nav");
 //var disappear = document.getElementsByClassName("disappear");
-var appear = document.getElementsByClassName("appear");
 
 var xxx = document.getElementById("x");
 // var sidelink = document.getElementsByClassName("side-nav-link");
 
 burger.addEventListener("click", function () {
-    overlay[0].classList.add("appear");
-    nav[0].classList.add("appear");
+    overlay.classList.remove("disappear");
+    nav.classList.remove("disappear");
 
     // sidelink[].classList.add("appear");
     // overlay[0].style.visibilyty = "visible";
