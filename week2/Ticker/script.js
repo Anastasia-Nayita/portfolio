@@ -10,21 +10,21 @@
             headlines.appendChild(links[0]);
         }
         headlines.style.left = left + "px";
-        requestAnimationFrame(gogo);
+        myReq = requestAnimationFrame(gogo);
     }
     gogo();
 })();
 
 (function () {
     var headlines = document.getElementById("headlines-bottom");
-    var right = headlines.offsetLeft;
+    var right = headlines.offsetLeft + headlines.offsetWidth;
     var links = document.getElementsByTagName("a");
 
     function ogog() {
         right--;
-        if (right <= -links.length.offsetWidth) {
-            right += links.length.offsetWidth;
-            headlines.appendChild(right[0]);
+        if (right <= -links[0].offsetWidth) {
+            right += links[0].offsetWidth;
+            headlines.appendChild(links[0]);
         }
         headlines.style.right = right + "px";
         requestAnimationFrame(ogog);
@@ -32,13 +32,13 @@
     ogog();
 })();
 
-(function () {
-    var headlines = document.getElementById("headlines");
-    var links = document.getElementsByTagName("a");
-    for (var i = 0; i <= headlines.length; i++) {
-        a[i].addEventListener("mouseenter"),
-            function (event) {
-                headlines = event.target.style.color = "white";
-            };
-    }
-});
+// var headlines = document.getElementById("headlines");
+// var links = document.getElementsByTagName("a");
+// for (var i = 0; i <= headlines.length; i++) {
+//     links[i].addEventListener("mouseenter", function (event) {
+//         cancelAnimationFrame(myReq);
+//     });
+//     links[i].addEventListener("mouseleave", function (event) {
+//         myReq = requestAnimationFrame(gogo);
+//     });
+// }

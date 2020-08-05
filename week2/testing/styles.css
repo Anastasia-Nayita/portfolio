@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.secondRow {
+    position: absolute;
+    left: 200px;
+    top: 0;
+}
+.thirdRow {
+    position: absolute;
+    left: 400px;
+    top: 0;
+}
+#box {
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+}
