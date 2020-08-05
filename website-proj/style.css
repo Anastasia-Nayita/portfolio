@@ -20,6 +20,32 @@
     right: 5px;
 }
 
+.overlay {
+    position: fixed;
+    width: 70%;
+    height: 100%;
+    /* bottom: 0; */
+    /* right: 30%; */
+    background-color: #1b1919;
+    opacity: 0.5;
+    z-index: 1;
+    /* filter: brightness(50%); */
+}
+
+.side-nav {
+    position: fixed;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    z-index: 2;
+    background-color: hotpink;
+}
+
+a {
+    margin: 10%;
+    /* position: fixed; */
+}
+
 .banner {
     width: 100%;
     text-align: center;
@@ -274,7 +300,7 @@ p {
         margin-right: 5%;
     }
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
     .banner button,
     body,
@@ -287,4 +313,4 @@ p {
         filter: brightness(50%);
         transition: filter 3s;
     }
-}
+} */
