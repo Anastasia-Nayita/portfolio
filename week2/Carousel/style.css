@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.kitty-container {
+    height: 600px;
+    overflow: hidden;
+    position: relative; /* could it be done with display-flex-row ? */
+}
+
+.kitty-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateX(100%);
+}
+
+.kitty-container img.onscreen {
+    transform: translateX(0);
+    transition: transform 3s;
+}
+
+.kitty-container img.offscreen-left {
+    transform: translate(-100%);
+    transition: transform 3s; /*can I build carusel only with css transition*/
+}
