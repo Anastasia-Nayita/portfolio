@@ -22,7 +22,7 @@ footer {
 } */
 
 /* № 3 */
-* {
+/* * {
     margin: 0;
 }
 body {
@@ -48,4 +48,40 @@ main img {
 footer {
     background-color: pink;
     height: 30px;
+} */
+
+/* 
+№ 4 */
+
+* {
+    margin: 0;
+}
+
+.bigSquare {
+    width: 200px;
+    height: 200px;
+    margin: 0 1%;
+    float: left;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.smallSquare {
+    /* position: absolute; */
+    /* left: 100px; */
+    width: 100px;
+    height: 100px;
+}
+
+.second {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.third {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
