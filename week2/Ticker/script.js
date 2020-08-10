@@ -1,44 +1,44 @@
 (function () {
-    var headlines = document.getElementById("headlines");
-    var left = headlines.offsetLeft;
-    var links = document.getElementsByTagName("a");
+    // var headlines = document.getElementById("headlines");
+    var headlines = $("#headlines");
+    console.log(headlines);
+    // var left = headlines.offsetLeft;
+    var left = headlines.offset().left;
+    // var links = document.getElementsByTagName("a");
+    // var links = $("a");
+    var myReq;
 
-    function gogo() {
+    function goTop() {
+        // var links = $("a");
         left--;
-        if (left <= -links[0].offsetWidth) {
-            left += links[0].offsetWidth;
-            headlines.appendChild(links[0]);
+        if (left <= -headlines.find("a").eq(0).outerWidth()) {
+            left += headlines.find("a").eq(0).outerWidth();
+            // headlines.appendChild(links[0]);
+            headlines.append(headlines.find("a").eq(0));
         }
-        headlines.style.left = left + "px";
-        myReq = requestAnimationFrame(gogo);
+        // headlines.style.left = left + "px";
+        headlines.css({ left: left + "px" });
+        myReq = requestAnimationFrame(goTop);
     }
-    gogo();
+    goTop();
 })();
 
 (function () {
-    var headlines = document.getElementById("headlines-bottom");
-    var right = headlines.offsetLeft + headlines.offsetWidth;
-    var links = document.getElementsByTagName("a");
+    // var headlines = document.getElementById("headlines-bottom");
+    var headlines = $("#headlines-bottom");
+    //var right = headlines.offsetLeft + headlines.offsetWidth;
+    var right = headlines.offset().left + headlines.offset().width;
+    //var links = document.getElementsByTagName("a");
+    // var links = $("a");
 
-    function ogog() {
+    function goBottom() {
         right--;
-        if (right <= -links[0].offsetWidth) {
-            right += links[0].offsetWidth;
-            headlines.appendChild(links[0]);
+        if (right <= -headlines.find("a").eq(0).outerWidth()) {
+            right += headlines.find("a").eq(0).outerWidth();
+            headlines.append(headlines.find("a").eq(0));
         }
-        headlines.style.right = right + "px";
-        requestAnimationFrame(ogog);
+        headlines.css({ right: right + "px" });
+        requestAnimationFrame(goBottom);
     }
-    ogog();
+    goBottom();
 })();
-
-// var headlines = document.getElementById("headlines");
-// var links = document.getElementsByTagName("a");
-// for (var i = 0; i <= headlines.length; i++) {
-//     links[i].addEventListener("mouseenter", function (event) {
-//         cancelAnimationFrame(myReq);
-//     });
-//     links[i].addEventListener("mouseleave", function (event) {
-//         myReq = requestAnimationFrame(gogo);
-//     });
-// }

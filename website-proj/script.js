@@ -18,7 +18,17 @@ burger.addEventListener("click", function () {
     // nav[0].style.visibilyty = "visible";
 });
 
-close.addEventListener("click", function () {
-    overlay[0].classList.add("disappear");
-    nav[0].classList.add("disappear");
+var popup = $("#popup");
+var container = $("#container");
+var closePop = $("#closePop");
+
+$(window).on("load", function () {
+    console.log("container.eq(0):", container.eq(0));
+    container.eq(0).toggle().delay(1400).fadeIn(500);
+    popup.eq(0).toggle().delay(1000).fadeIn(500);
+});
+
+closePop.on("click", function fn(e) {
+    container.eq(0).addClass("disappear");
+    popup.eq(0).addClass("disappear");
 });
