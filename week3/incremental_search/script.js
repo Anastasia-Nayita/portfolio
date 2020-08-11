@@ -217,7 +217,7 @@ inp.on("input", function () {
     for (i = 0; i < matches.length; i++) {
         resultsHtml += "<div>" + matches[i] + "</div>";
     }
-    // results.html(resultsHtml);
+
     results.html(resultsHtml || "<div id='noResults'> No results!</div>");
 }).on("focus", function (e) {
     $(e.target).trigger("input");
@@ -227,4 +227,27 @@ $(document).mousedown(function (e) {
     if (!results.is(e.target) && !inp.is(e.target)) {
         results.empty();
     }
+});
+
+results.on("mouseover", "div", function (e) {
+    $(e.target).addClass("highlight");
+});
+
+results.on("mouseleave", "div", function (e) {
+    $(e.target).removeClass("highlight");
+});
+
+results.on("keydown", "div", function (e) {
+    if (e.keyCode === 40) {
+        if (!results.hasClass("highlight")) {
+            results.first().addClass("highlight");
+        }
+        //  matches[0].classList.add("highlight");
+        // if ($(e.target).hasClass('highlight')){
+
+        // }
+    }
+    // if (e.keyCode === 38) {
+    //     //up
+    // }
 });

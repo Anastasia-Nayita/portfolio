@@ -21,10 +21,10 @@ input {
     background-color: lavender;
 }
 
+.highlight {
+    background-color: darkgreen;
+    color: white;
+}
 #noResults {
     background-color: grey;
 }
-
-.highlight {
-}
-/* can it be hover  ? */
