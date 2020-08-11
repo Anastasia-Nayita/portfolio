@@ -1,0 +1,30 @@
+body {
+    background-color: cornsilk;
+    font-family: sans-serif;
+}
+input {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    font-size: x-large;
+    width: 180px;
+    height: 35px;
+    border: yellow solid 8px;
+}
+
+#results {
+    position: absolute;
+    top: 37%;
+    left: 40%;
+    width: 200px;
+    height: auto;
+    background-color: lavender;
+}
+
+#noResults {
+    background-color: grey;
+}
+
+.highlight {
+}
+/* can it be hover  ? */
