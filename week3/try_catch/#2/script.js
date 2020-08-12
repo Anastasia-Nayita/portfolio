@@ -1,8 +1,16 @@
 (function () {
-    try {
-        translateNumberToGerman();
+    function askForNumber() {
+        var num = prompt("Please enter a number between 1 and 10");
+        if (num >= 1 && num <= 10 && num == parseInt(num)) {
+            return num;
+        }
+        throw new Error("Bad number");
+    }
 
-        function translateNumberToGerman() {
+    translateNumberToGerman();
+
+    function translateNumberToGerman() {
+        try {
             var number = askForNumber();
             var translations = [
                 "null",
@@ -22,16 +30,9 @@
                     alert(number + "=" + translations[i]);
                 }
             }
+        } catch (e) {
+            alert(e);
+            translateNumberToGerman();
         }
-        function askForNumber() {
-            var num = prompt("Please enter a number between 1 and 10");
-            if (num >= 1 && num <= 10 && num == parseInt(num)) {
-                return num;
-            }
-        }
-    } catch (e) {
-        console.log(e);
-        alert(e);
-        translateNumberToGerman();
     }
 })();
