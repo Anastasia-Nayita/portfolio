@@ -237,25 +237,29 @@ results.on("mouseleave", "div", function (e) {
     $(e.target).removeClass("highlight");
 });
 
+inp.blur(function () {
+    results.empty();
+});
+
 $(document).on("keydown", function (e) {
-    var target = $(e.target);
+    var results = $("#results");
+    var highlight = $(".highlight");
     if (e.keyCode === 40) {
-        if (!results.hasClass("highlight")) {
-            target.eq(0).addClass("highlight");
-        } else if (results.last().hasClass("highlight")) {
-            target.first().addClass("highlight");
-        } else {
-            for (var i = 0; i < results.length; i++) {
-                if (results.eq(i).hasClass("highlight")) {
-                    results.eq(i).removeClass("highlight");
-                    i++;
-                    results.eq(i).addClass("highlight");
-                }
+        if (results.index(highlight) < results.length - 1) {
+            if (highlight.length < 1) {
+                results.eq(0).addClass("highlight");
+            } else {
+                highlight.removeClass("highlight").next().addClass("highlight");
             }
-        }
-        if (e.keyCode === 38) {
-        }
-        if (e.keyCode === 13) {
+
+        } else if (e.keyCode === 38) {
+            if (highlight.length < 1) {
+                results.eq(0).addClass("highlight");
+                else if (results.index(highlight) > 0) {
+                    highlight.removeClass("highlight").prev().addClass("highlight");
+                }
+
+        } else if (e.keyCode === 13) {
             inp.val($(".highlight").text());
             results.empty;
         }
