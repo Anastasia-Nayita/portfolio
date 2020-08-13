@@ -1,11 +1,31 @@
 (function () {
-    // var headlines = document.getElementById("headlines");
+    $.ajax({
+        url: "/data.json",
+        method: "GET",
+        success: function (response) {
+            console.log("response: ", response);
+
+            var myHtml = "";
+            for (var i = 0; i < response.length; i++) {
+                var textLink =
+                    "<a href = " +
+                    response[i].link +
+                    " >" +
+                    response[i].text +
+                    "</a>";
+                myHtml += textLink;
+            }
+
+            $("#headlines").html(myHtml);
+        },
+        error: function (err) {
+            console.log("err", err);
+        },
+    });
+
     var headlines = $("#headlines");
     console.log(headlines);
-    // var left = headlines.offsetLeft;
     var left = headlines.offset().left;
-    // var links = document.getElementsByTagName("a");
-    // var links = $("a");
     var myReq;
 
     function goTop() {
