@@ -245,25 +245,25 @@ $(document).on("keydown", function (e) {
     var results = $("#results");
     var highlight = $(".highlight");
     if (e.keyCode === 40) {
-        if (results.index(highlight) < results.length - 1) {
             if (highlight.length < 1) {
                 results.eq(0).addClass("highlight");
-            } else {
+            } else if (results.index(highlight) < results.length - 1) {
                 highlight.removeClass("highlight").next().addClass("highlight");
             }
-
-        } else if (e.keyCode === 38) {
+        }
+    
+    if (e.keyCode === 38) {
             if (highlight.length < 1) {
                 results.eq(0).addClass("highlight");
-                else if (results.index(highlight) > 0) {
-                    highlight.removeClass("highlight").prev().addClass("highlight");
-                }
-
-        } else if (e.keyCode === 13) {
+            } else if (results.index(highlight) > 0) {
+                highlight.removeClass("highlight").prev().addClass("highlight");
+            }
+        } 
+    if (e.keyCode === 13) {
             inp.val($(".highlight").text());
             results.empty;
         }
-    }
+    })
     $(e.target).trigger("keydown");
 
     // if (e.keyCode === 38) {
