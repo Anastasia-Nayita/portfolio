@@ -1,199 +1,3 @@
-var listCountries = [
-    "Afghanistan",
-    "Albania",
-    "Algeria",
-    "Andorra",
-    "Angola",
-    "Antigua and Barbuda",
-    "Argentina",
-    "Armenia",
-    "Australia",
-    "Austria",
-    "Azerbaijan",
-    "Bahamas",
-    "Bahrain",
-    "Bangladesh",
-    "Barbados",
-    "Belarus",
-    "Belgium",
-    "Belize",
-    "Benin",
-    "Bhutan",
-    "Bolivia",
-    "Bosnia and Herzegovina",
-    "Botswana",
-    "Brazil",
-    "Brunei Darussalam",
-    "Bulgaria",
-    "Burkina Faso",
-    "Burundi",
-    "Cabo Verde",
-    "Cambodia",
-    "Cameroon",
-    "Canada",
-    "Central African Republic",
-    "Chad",
-    "Chile",
-    "China",
-    "Colombia",
-    "Comoros",
-    "Congo",
-    "Costa Rica",
-    "Côte D'Ivoire",
-    "Croatia",
-    "Cuba",
-    "Cyprus",
-    "Czech Republic",
-    "Democratic People's Republic of Korea",
-    "Democratic Republic of the Congo",
-    "Denmark",
-    "Djibouti",
-    "Dominica",
-    "Dominican Republic",
-    "Ecuador",
-    "Egypt",
-    "El Salvador",
-    "Equatorial Guinea",
-    "Eritrea",
-    "Estonia",
-    "Eswatini",
-    "Ethiopia",
-    "Fiji",
-    "Finland",
-    "France",
-    "Gabon",
-    "Gambia",
-    "Georgia",
-    "Germany",
-    "Ghana",
-    "Greece",
-    "Grenada",
-    "Guatemala",
-    "Guinea",
-    "Guinea Bissau",
-    "Guyana",
-    "Haiti",
-    "Honduras",
-    "Hungary",
-    "Iceland",
-    "India",
-    "Indonesia",
-    "Iran",
-    "Iraq",
-    "Ireland",
-    "Israel",
-    "Italy",
-    "Jamaica",
-    "Japan",
-    "Jordan",
-    "Kazakhstan",
-    "Kenya",
-    "Kiribati",
-    "Kuwait",
-    "Kyrgyzstan",
-    "Lao People’s Democratic Republic",
-    "Latvia",
-    "Lebanon",
-    "Lesotho",
-    "Liberia",
-    "Libya",
-    "Liechtenstein",
-    "Lithuania",
-    "Luxembourg",
-    "Madagascar",
-    "Malawi",
-    "Malaysia",
-    "Maldives",
-    "Mali",
-    "Malta",
-    "Marshall Islands",
-    "Mauritania",
-    "Mauritius",
-    "Mexico",
-    "Micronesia",
-    "Monaco",
-    "Mongolia",
-    "Montenegro",
-    "Morocco",
-    "Mozambique",
-    "Myanmar",
-    "Namibia",
-    "Nauru",
-    "Nepal",
-    "Netherlands",
-    "New Zealand",
-    "Nicaragua",
-    "Niger",
-    "Nigeria",
-    "North Macedonia",
-    "Norway",
-    "Oman",
-    "Pakistan",
-    "Palau",
-    "Panama",
-    "Papua New Guinea",
-    "Paraguay",
-    "Peru",
-    "Philippines",
-    "Poland",
-    "Portugal",
-    "Qatar",
-    "Republic of Korea",
-    "Republic of Moldova",
-    "Romania",
-    "Russian Federation",
-    "Rwanda",
-    "Saint Kitts and Nevis",
-    "Saint Lucia",
-    "Saint Vincent and the Grenadines",
-    "Samoa",
-    "San Marino",
-    "Sao Tome and Principe",
-    "Saudi Arabia",
-    "Senegal",
-    "Serbia",
-    "Seychelles",
-    "Sierra Leone",
-    "Singapore",
-    "Slovakia",
-    "Slovenia",
-    "Solomon Islands",
-    "Somalia",
-    "South Africa",
-    "South Sudan",
-    "Spain",
-    "Sri Lanka",
-    "Sudan",
-    "Suriname",
-    "Sweden",
-    "Switzerland",
-    "Syrian Arab Republic",
-    "Tajikistan",
-    "Thailand",
-    "Timor-Leste",
-    "Togo",
-    "Tonga",
-    "Trinidad and Tobago",
-    "Tunisia",
-    "Turkey",
-    "Turkmenistan",
-    "Tuvalu",
-    "Uganda",
-    "Ukraine",
-    "United Arab Emirates",
-    "United Kingdom",
-    "United Republic of Tanzania",
-    "United States of America",
-    "Uruguay",
-    "Uzbekistan",
-    "Vanuatu",
-    "Venezuela",
-    "Viet Nam",
-    "Yemen",
-    "Zambia",
-    "Zimbabwe",
-];
-
 var inp = $("input");
 var results = $("#results");
 
@@ -202,71 +6,93 @@ inp.on("input", function () {
 
     var matches = [];
 
-    for (var i = 0; i < listCountries.length; i++) {
-        if (listCountries[i].toLowerCase().indexOf(val.toLowerCase()) == 0) {
-            matches.push(listCountries[i]);
-        }
+    $.ajax({
+        url: "https://flame-egg.glitch.me/",
+        data: {
+            q: val,
+        },
 
-        if (matches.length == 4) {
-            break;
-        }
-    }
+        success: function (response) {
+            // do something with the data here
+            console.log(response);
+            var myHtml = "";
+            if ((val = inp.val())) {
+                for (var i = 0; i < response.length; i++) {
+                    var foundCountries = "<div>" + response[i] + "</div>";
+                    myHtml += foundCountries;
+                }
 
-    matches = matches.slice(0, 4);
-    var resultsHtml = "";
-    for (i = 0; i < matches.length; i++) {
-        resultsHtml += "<div>" + matches[i] + "</div>";
-    }
-
-    results.html(resultsHtml || "<div id='noResults'> No results!</div>");
-}).on("focus", function (e) {
-    $(e.target).trigger("input");
-});
-
-$(document).mousedown(function (e) {
-    if (!results.is(e.target) && !inp.is(e.target)) {
-        results.empty();
-    }
-});
-
-results.on("mouseover", "div", function (e) {
-    $(e.target).addClass("highlight");
-});
-
-results.on("mouseleave", "div", function (e) {
-    $(e.target).removeClass("highlight");
-});
-
-inp.blur(function () {
-    results.empty();
-});
-
-$(document).on("keydown", function (e) {
-    var results = $("#results");
-    var highlight = $(".highlight");
-    if (e.keyCode === 40) {
-            if (highlight.length < 1) {
-                results.eq(0).addClass("highlight");
-            } else if (results.index(highlight) < results.length - 1) {
-                highlight.removeClass("highlight").next().addClass("highlight");
+                console.log(myHtml);
+                results.html(myHtml);
             }
-        }
-    
-    if (e.keyCode === 38) {
-            if (highlight.length < 1) {
-                results.eq(0).addClass("highlight");
-            } else if (results.index(highlight) > 0) {
-                highlight.removeClass("highlight").prev().addClass("highlight");
-            }
-        } 
-    if (e.keyCode === 13) {
-            inp.val($(".highlight").text());
-            results.empty;
-        }
-    })
-    $(e.target).trigger("keydown");
-
-    // if (e.keyCode === 38) {
-    //     //up
-    // }
+            results.html(myHtml || "<div id='noResults'> No results!</div>");
+        },
+        error: function (err) {
+            console.log("error: ", err);
+        },
+    });
 });
+
+// for (var i = 0; i < listCountries.length; i++) {
+//     if (listCountries[i].toLowerCase().indexOf(val.toLowerCase()) == 0) {
+//         matches.push(listCountries[i]);
+//     }
+// }
+
+// matches = matches.slice(0, 4);
+// var resultsHtml = "";
+// for (i = 0; i < matches.length; i++) {
+//     resultsHtml += "<div>" + matches[i] + "</div>";
+// }
+
+//     results.html(resultsHtml || "<div id='noResults'> No results!</div>");
+// }).on("focus", function (e) {
+//     $(e.target).trigger("input");
+// });
+
+// $(document).mousedown(function (e) {
+//     if (!results.is(e.target) && !inp.is(e.target)) {
+//         results.empty();
+//     }
+// });
+
+// results.on("mouseover", "div", function (e) {
+//     $(e.target).addClass("highlight");
+// });
+
+// results.on("mouseleave", "div", function (e) {
+//     $(e.target).removeClass("highlight");
+// });
+
+// inp.blur(function () {
+//     results.empty();
+// });
+
+// $(document).on("keydown", function (e) {
+//     var results = $("#results");
+//     var highlight = $(".highlight");
+//     if (e.keyCode === 40) {
+//         if (highlight.length < 1) {
+//             results.eq(0).addClass("highlight");
+//         } else if (results.index(highlight) < results.length - 1) {
+//             highlight.removeClass("highlight").next().addClass("highlight");
+//         }
+//     }
+
+//     if (e.keyCode === 38) {
+//         if (highlight.length < 1) {
+//             results.eq(0).addClass("highlight");
+//         } else if (results.index(highlight) > 0) {
+//             highlight.removeClass("highlight").prev().addClass("highlight");
+//         }
+//     }
+//     if (e.keyCode === 13) {
+//         inp.val($(".highlight").text());
+//         results.empty;
+//     }
+// });
+// $(e.target).trigger("keydown");
+
+// if (e.keyCode === 38) {
+//     //up
+// }
