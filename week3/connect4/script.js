@@ -19,6 +19,7 @@
         if (i === -1) {
             return;
         }
+
         var rowClicked = i;
         var colClicked = col.index();
 
@@ -59,6 +60,33 @@
             location.reload();
         });
     });
+
+    //addClickEvent
+    // $("#computer").on("click", function playWithComputer() {
+    //     if ((currentPlayer = "player2")) {
+    //         const randomNum = Math.floor(Math.random() * 6);
+
+    //         console.log("randomNum", randomNum);
+    //         var column = $(".column");
+
+    //         console.log("column[step] = ", column[randomNum]);
+    //         var col = column[randomNum];
+    //         var slotsInCol = col.children();
+    //         for (var i = slotsInCol.length - 1; i >= 0; i--) {
+    //             if (
+    //                 !slotsInCol.eq(i).hasClass("player1") &&
+    //                 !slotsInCol.eq(i).hasClass("player2")
+    //             ) {
+    //                 slotsInCol.eq(i).addClass(currentPlayer);
+    //                 break;
+    //             }
+    //         }
+
+    //         if (i === -1) {
+    //             return;
+    //         }
+    //     }
+    // });
 
     function checkForDiagonalVictory() {
         var board = [];

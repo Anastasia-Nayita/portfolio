@@ -103,6 +103,12 @@ h1 {
     visibility: hidden;
 }
 
+/* #computer{
+    position: absolute;
+    top: 10%;
+    left: 77%;
+} */
+
 button{
     position: absolute;
     top: 70%;
