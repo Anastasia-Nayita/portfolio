@@ -61,7 +61,6 @@
         });
     });
 
-    //addClickEvent
     // $("#computer").on("click", function playWithComputer() {
     //     if ((currentPlayer = "player2")) {
     //         const randomNum = Math.floor(Math.random() * 6);
