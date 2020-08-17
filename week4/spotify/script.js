@@ -11,7 +11,6 @@
                 type: artistOrAlbum,
             },
             success: function (payload) {
-                //we care about 'name', img and external url(link)
                 payload = payload.artists || payload.albums;
 
                 var nameImgs = "";
@@ -21,7 +20,6 @@
                         "https://spicedify.herokuapp.com/spotify"
                     );
                 }
-
                 console.log("nextUrl", nextUrl);
                 for (var i = 0; i < payload.items.length; i++) {
                     console.log(payload.items[i]);
@@ -41,7 +39,8 @@
 
                     $(".resContainer").html(nameImgs);
                 }
-            }, ///results for input,val and No results for 'tratra'
+            },
+            ///results for input,val and No results for 'tratra'
         });
     })();
 });
