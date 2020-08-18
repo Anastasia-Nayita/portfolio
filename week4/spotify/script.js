@@ -10,6 +10,7 @@
                 query: userInput,
                 type: artistOrAlbum,
             },
+
             success: function (payload) {
                 payload = payload.artists || payload.albums;
 
