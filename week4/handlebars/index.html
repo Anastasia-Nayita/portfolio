@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Authors!</title>
+    </head>
+
+    <body>
+        <div class="authors-info"></div>
+
+        <script id="authorsId" type="text/x-handlebars-template">
+            {{#authors}}
+                <div class="container">
+                    <div class="card">
+                        <img src={{photo}} />
+                        <h1>
+                            {{name}}
+                        </h1>
+                        <h4>
+                            {{born}} - {{died}}
+                        </h4>
+                        <h2>
+                            "{{quote}}"
+                        </h2>
+                        <section>
+                            <div class="selectedWritings">
+                                <h3>
+                                    Selected Writings:
+                                </h3>{{selectedWritings}}
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            {{/authors}}
+        </script>
+
+        <!-- <div class="container">
+            <div class="card">
+                <img
+                    src="https://cdn2.thedogapi.com/images/S1_8kx5Nm_1280.jpg"
+                />
+                <h2>George</h2>
+
+                <section>
+                    <div class="properties">Breed:</div>
+                    <div class="values">
+                        <p>Akita</p>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="properties">temperament:</div>
+                    <div class="values">
+                        <p>Docile</p>
+                        <p>Alert</p>
+                        <p>Friendly</p>
+                    </div>
+                </section>
+            </div>
+        </div> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
