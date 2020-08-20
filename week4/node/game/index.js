@@ -1,6 +1,8 @@
 const readline = require("readline");
 
-console.log("Let's Cure ourselves");
+console.log(`Let's Cure 
+ourselves
+`);
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -11,6 +13,7 @@ let conversation = {
     q: "Is it friday?",
     answers: {
         yes: "It's Friday, I'm in love♥️ ♥️ ♥️", //if user answers 'yes' - response 'yay'
+        etc: "Do-do, do-do, do-do, do... Oh, oh, whoa, whoa",
         no: {
             q: "what day is it?",
             answers: {
@@ -23,15 +26,8 @@ let conversation = {
                 etc: "Do-do, do-do, do-do, do... Oh, oh, whoa, whoa",
             },
         },
-        etc: "Do-do, do-do, do-do, do... Oh, oh, whoa, whoa",
     },
 };
-
-//console.log(conversation.q); //print q
-// console.log(
-//     "conversation.answers.no.answers[0]",
-//     conversation.answers.no.answers[]
-// );
 
 function askQuestion(convoObj) {
     rl.question(convoObj.q, (answer) => {
@@ -41,24 +37,15 @@ function askQuestion(convoObj) {
             convoObj.answers[answer] &&
             typeof convoObj.answers[answer] === "string"
         ) {
-            if (convoObj.answers["yes"]) {
-                console.log(convoObj.answers[answer]);
-                rl.close();
-            }
+            console.log(convoObj.answers[answer]);
+            // rl.close();
         } else if (
             convoObj.answers[answer] &&
             typeof convoObj.answers[answer] === "object"
         ) {
-            askQuestion(convoObj.answers[answer]);
-
-            //  convoObj.answers.no.answers[answer]) {
-            //     console.log(convoObj.answers.no.answers[answer]);
-            //     askQuestion(convoObj.answers.no);
-            // } else {
-            //     console.log("GIRL SOMETHING IS HAPPENING HERE");
-            // }
+            askQuestion(convoObj.answers.no);
         } else {
-            askQuestion(convoObj); //when we want ask a?
+            console.log("this is the last console log");
         }
     });
 }
