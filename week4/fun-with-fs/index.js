@@ -1,6 +1,7 @@
 const fs = require("fs");
 
 const myPath = __dirname;
+console.log(myPath);
 
 function logSizes(myPath) {
     fs.readdir(myPath, { withFileTypes: true }, (err, files) => {
@@ -33,41 +34,44 @@ function logSizes(myPath) {
 
 // logSizes("/Users/naya/Code/cumin-code/week4/fun-with-fs");
 
-function mapSizes(myPath) {
-    const files = fs.readdirSync(myPath, { withFileTypes: true }); //doesn't take callbacks!!
+function mapSizes(path) {
+    const files = fs.readdirSync(path, { withFileTypes: true }); //doesn't take callbacks!!
 
     //  console.log("files after readdirSync", files);
 
-    const objF = {};
-    const
+    var obj = {};
+
     for (let i = 0; i < files.length; i++) {
         //const dirPath = myPath + "/" + files[i].name;
         // console.log("files[i].name", files[i].name);
         //const myStat = fs.statSync(dirPath);
-        const myStat = fs.statSync(myPath);
         // console.log("files[i].isFile()", files[i].isFile());
         if (files[i].isFile()) {
-            let fileName = files[i].name;
+            const myStat = fs.statSync(path);
+
+            let name = files[i].name;
             let valSize = myStat.size;
-            objF[fileName] = valSize;
-            // return obj;
-            console.log("obj", obj);
-        }
-        else if (files[i].isDirectory()) {
-            let fileName = files[i].name;
-            //const dirPath = myPath + "/" + files[i].name;
-            //console.log("dirPath = ", dirPath);
-           // obj[fileName] = mapSizes(dirPath);
-           // return obj;
-            
-         console.log("obj", obj);
+            obj[name] = valSize;
+
+            // console.log("obj", obj);
+        } else if (files[i].isDirectory()) {
+            const name = files[i].name;
+            const dirPath = path + "/" + name;
+            console.log("dirPath = ", dirPath);
+            // obj[fileName] = mapSizes(dirPath);
+
+            obj = { ...obj, [name]: mapSizes(dirPath) };
+            //console.log("obj", obj);
         }
     }
+    // console.log("obj", obj);
+    return obj;
 }
 
-//let obj = mapSizes();
-//fs.writeFileSync(myPath + "/mapSize.json", JSON.stringify(obj, null, 4));
-mapSizes("/Users/naya/Code/cumin-code/week4/fun-with-fs");
+const strObj = JSON.stringify(mapSizes(myPath));
+console.log(strObj);
+
+fs.writeFileSync(myPath + "/mapSize.json", strObj);
 ///its readdirSync, statSync and writeFileSync methods in Part 2.
 //let obj = {...obj, name: newvalue}
 
