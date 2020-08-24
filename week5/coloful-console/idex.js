@@ -27,6 +27,7 @@ const server = http.createServer((req, res) => {
                     </select>
                     <button type="submit">Go</button>
                 </form>
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
             </html>
         `);
         res.end();
@@ -40,9 +41,13 @@ const server = http.createServer((req, res) => {
             res.setHeader("Content-Type", "text/html");
             res.statusCode = 200;
             res.write(`
-                <p style="color:red;">Hello ${parsedBody.first}!!!</p>
+                <p style="color:${parsedBody.color};">Hello ${parsedBody.first}!!!</p>
             `);
             res.end();
+            const chosenColor = parsedBody.color;
+            console.log(
+                chalk.chosenColor(parsedBody.first) + "just clicked submit"
+            );
         });
     }
 });
