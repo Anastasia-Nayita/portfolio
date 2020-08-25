@@ -69,7 +69,7 @@ function mapSizes(path) {
 }
 
 const strObj = JSON.stringify(mapSizes(myPath));
-console.log(strObj);
+//console.log(strObj);
 
 fs.writeFileSync(myPath + "/mapSize.json", strObj);
 ///its readdirSync, statSync and writeFileSync methods in Part 2.
