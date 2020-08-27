@@ -1,0 +1,17 @@
+<div id="welcome">
+    <h1>Hello, my name is Naya. 
+    <br> I'm student at Spiced Academy 
+    <br> based in Berlin   <img id="bear" src="bear.png" alt=""></h1>
+</div> 
+   
+<div id="projectBlock">
+    {{#projects}}
+    <div id="eachProject">
+        <a href="/{{directory}}/index.html"> 
+        {{name}}</a>
+       <a href="/{{directory}}/index.html">  <img id="projImg" src="/{{directory}}/screenshot.png" alt=""></a>
+       </div>
+    {{/projects}}
+</div>    
+
+   

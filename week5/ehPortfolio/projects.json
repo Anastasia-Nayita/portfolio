@@ -1,0 +1,5 @@
+[
+    { "name": "Carousel", "directory": "Carousel" },
+    { "name": "Connect4", "directory": "connect4" },
+    { "name": "Panes", "directory": "panes" }
+]
