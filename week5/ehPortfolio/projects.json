@@ -1,5 +1,17 @@
 [
-    { "name": "Carousel", "directory": "Carousel" },
-    { "name": "Connect4", "directory": "connect4" },
-    { "name": "Panes", "directory": "panes" }
+    {
+        "name": "carousel",
+        "directory": "carousel",
+        "description": "Kitties are rolling!"
+    },
+    {
+        "name": "connect4",
+        "directory": "connect4",
+        "description": "Connect four and win the battle!"
+    },
+    {
+        "name": "panes",
+        "directory": "panes",
+        "description": "Cosplay💁‍♀️"
+    }
 ]

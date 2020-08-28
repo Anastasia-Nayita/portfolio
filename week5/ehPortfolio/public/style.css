@@ -48,3 +48,29 @@ a {
 a:hover {
     color: gold;
 }
+
+button {
+    width: 50px;
+    height: 100px;
+}
+.sideNav {
+    position: fixed;
+    right: 10px;
+    background-color: gray;
+    width: 200px;
+    font-family: "Rajdhani";
+}
+
+.description img {
+    width: 200px;
+}
+
+.description {
+    font-family: "Montserrat";
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    font-family: "Montserrat";
+}

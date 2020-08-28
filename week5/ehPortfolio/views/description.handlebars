@@ -1,0 +1,13 @@
+     {{>sidenav }}
+<div class="description"> 
+       {{#selectedProject}}
+    <h1>
+        This is {{name}} project!
+    </h1>
+        <img  src="/{{directory}}/screenshot.png" alt="">
+    <h2>
+        {{description}}
+    </h2>
+    {{>button}}
+        {{/selectedProject}}    
+</div>

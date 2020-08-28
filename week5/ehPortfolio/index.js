@@ -16,4 +16,26 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/projects/:project", (req, res) => {
+    const { project } = req.params;
+    const selectedProject = projects.find(({ name }) => name === project);
+    if (!selectedProject) {
+        return res.sendStatus(404);
+    }
+    res.render("description", {
+        layout: "main",
+        selectedProject,
+        projects,
+        helpers: {
+            checkCurrent(text) {
+                if (text === selectedProject.name) {
+                    return text.toUpperCase();
+                } else {
+                    return text;
+                }
+            },
+        },
+    });
+});
+
 app.listen(8080, console.log("sever is listenning..."));
