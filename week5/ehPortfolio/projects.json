@@ -2,16 +2,16 @@
     {
         "name": "carousel",
         "directory": "carousel",
-        "description": "Kitties are rolling!"
+        "description": "Kitties are rolling! Dots are clickable and indicating which picture is on."
     },
     {
         "name": "connect4",
         "directory": "connect4",
-        "description": "Connect four and win the battle!"
+        "description": "Connect four and win the battle! I've had a lot of fun building animation and discovering ways to connect diagonal win."
     },
     {
         "name": "panes",
         "directory": "panes",
-        "description": "Cosplay💁‍♀️"
+        "description": "Cosplay💁‍♀️. Both images staying the same size as the user drags the bar to reveal more of one photo and less of the other"
     }
 ]

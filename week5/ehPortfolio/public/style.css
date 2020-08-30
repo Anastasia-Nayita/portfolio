@@ -7,19 +7,53 @@ body {
     color: rgb(223 224 219);
 }
 #welcome {
+    display: flex;
+    /* text-align: center; */
     width: auto;
     height: 30%;
     padding: 10%;
+    padding-bottom: 10%;
 }
 h1 {
     font-family: "Rajdhani";
-    top: 10%;
-    left: 20%;
+    /* top: 18%; */
+    /* left: 20%; */
     font-size: 3.5rem;
+    margin-top: 9%;
 }
-#bear {
+.boxBear {
+    /* margin-left: 90px; */
+    margin-top: 53px;
+    height: 400px;
+    width: 400px;
     position: relative;
-    width: 100px;
+}
+.bear {
+    position: absolute;
+}
+.bearLight {
+    position: absolute;
+    animation: light 5s ease-in-out infinite;
+}
+@keyframes light {
+    0% {
+    }
+    25% {
+        opacity: 0.7;
+        transform: translate(15%, -57%);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(65%, -60%);
+    }
+    75% {
+        opacity: 0.7;
+        transform: translate(75%, 5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0%, 0%);
+    }
 }
 
 #projectBlock {
@@ -28,7 +62,7 @@ h1 {
 #projImg {
     width: 20rem;
     height: 18rem;
-    margin-top: 18px;
+    margin-top: 28px;
 }
 #projImg:hover {
     filter: drop-shadow(16px 16px 20px rgba(255, 217, 0, 0.801));
@@ -50,27 +84,38 @@ a:hover {
 }
 
 button {
-    width: 50px;
-    height: 100px;
+    margin: 0 15%;
+    width: 150px;
+    height: 60px;
+    font-family: "Montserrat";
+    background: #3c3938;
 }
+button:hover {
+    filter: drop-shadow(16px 16px 20px rgba(255, 217, 0, 0.801));
+}
+
 .sideNav {
     position: fixed;
-    right: 10px;
-    background-color: gray;
+    right: 0px;
     width: 200px;
+    height: 100%;
+    top: 10%;
     font-family: "Rajdhani";
+    font-size: 2.3rem;
 }
 
 .description img {
-    width: 200px;
+    margin: 3% 0%;
+    width: 440px;
 }
 
 .description {
+    margin: 5% 5%;
     font-family: "Montserrat";
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 10px;
     font-family: "Montserrat";
 }
