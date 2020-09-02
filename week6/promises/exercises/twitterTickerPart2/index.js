@@ -9,9 +9,9 @@ app.get("/data.json", (req, res) => {
     getToken()
         .then((token) => {
             return Promise.all([
-                getTweets(token, "Drake", "Drizzy"),
-                getTweets(token, "Beyonce", "BEYONCÉ"),
-                getTweets(token, "taylorswift13", "Taylor Swift"),
+                getTweets(token, "Drake"),
+                getTweets(token, "Beyonce"),
+                getTweets(token, "taylorswift13"),
             ])
                 .then((results) => {
                     const mergedResults = [
@@ -23,7 +23,7 @@ app.get("/data.json", (req, res) => {
                         return new Date(b.created_at) - new Date(a.created_at);
                     });
                     const filteredTweets = filterTweets(sortedTweets);
-                    return res.json(filterTweets);
+                    return res.json(filteredTweets); ///!!
                 })
                 .catch((err) => console.log("err in the results", err));
         })

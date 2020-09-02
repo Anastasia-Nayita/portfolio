@@ -85,10 +85,10 @@ module.exports.filterTweets = function (tweets) {
     );
 
     filteredTweets.forEach((tweet) => {
-        let { name, full_text, entities } = tweet;
+        let { user, full_text, entities } = tweet;
         // console.log("name: ", name);
-        let text = name + ": " + full_text.split("https")[0].slice(0, -2);
-        console.log("text: ", text);
+        let text = user.name + ": " + full_text.split("https")[0].slice(0, -2);
+        // console.log("text: ", text);
         let href = entities.urls[0].url;
         const result = { text, href };
         arr.push(result);
