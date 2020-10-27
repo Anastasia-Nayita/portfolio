@@ -136,14 +136,12 @@ button:hover {
 }
 @keyframes fire {
     0% {
-        background-position: 0% 0%;
+        background-position: 0% -5%;
     }
     50% {
-        background-position: 0% -60%;
+        background-position: 0% -50%;
     }
     100% {
-        background-position: 0 -117%;
+        background-position: 0 -113%;
     }
 }
-
-/* some lines for victory span "Nice guys finish last" "Not today satan" "Holy molly" ""*/
