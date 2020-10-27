@@ -1,9 +1,7 @@
 * {
     margin: 0;
 }
-body {
-    /* background-color: teal; */
-}
+
 @font-face {
     font-family: "Superfly";
     src: local("/Users/naya/Library/Fonts/SUPERFLY.TTF");
@@ -23,14 +21,12 @@ h1 {
     box-shadow: 8px 8px dimgray;
 }
 .slot {
-    /* background-color: blue; */
     height: 100px;
     width: 100px;
     overflow: hidden;
 }
 
 .hole {
-    /* background-color: white; */
     height: 80px;
     width: 80px;
     border: 40px solid blue;
@@ -99,12 +95,6 @@ h1 {
 .disappear {
     visibility: hidden;
 }
-
-/* #computer{
-    position: absolute;
-    top: 10%;
-    left: 77%;
-} */
 
 button {
     position: absolute;
